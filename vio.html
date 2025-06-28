@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Violete 🌠</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #d17aff;
+            --secondary-color: #ff8ac5;
+            --background-start: #1e0a31;
+            --background-end: #0c0014;
+            --text-color: #f0e5ff;
+            --card-bg: rgba(255, 255, 255, 0.07);
+            --card-border: rgba(255, 255, 255, 0.2);
+            --glow-color: rgba(209, 122, 255, 0.7);
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(145deg, var(--background-start), var(--background-end));
+            color: var(--text-color);
+            overflow: hidden; /* Hide all scrollbars */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .sky-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle 5s infinite ease-in-out;
+        }
+
+        .moon {
+            position: absolute;
+            top: 10%;
+            right: 15%;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            box-shadow: 15px -15px 0 0 #f7f3e3;
+            animation: fadeInMoon 3s ease-out;
+            filter: drop-shadow(0 0 15px #f7f3e3);
+        }
+        
+        .meteor {
+            position: absolute;
+            width: 3px;
+            height: 80px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.8), transparent);
+            border-radius: 50%;
+            transform-origin: top left;
+            animation: shooting-star 5s linear infinite;
+        }
+
+        .glass-container {
+            position: relative; 
+            z-index: 1;
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--card-border);
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            max-width: 650px;
+            width: 100%;
+            text-align: center;
+            animation: fadeInScaleUp 1s ease-out forwards;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .glass-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        .glass-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .glass-container::-webkit-scrollbar-thumb {
+            background-color: var(--card-border);
+            border-radius: 20px;
+        }
+
+        .main-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            font-weight: 400;
+            color: #fff;
+            margin: 0 0 20px 0;
+            animation: glow 2.5s ease-in-out infinite alternate;
+        }
+
+        .description-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+        .description-list li {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px 25px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            border-left: 4px solid transparent;
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: cascadeIn 0.6s ease-out forwards;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
+        }
+        .description-list li:hover {
+            transform: scale(1.05) translateX(10px);
+            border-left-color: var(--primary-color);
+            box-shadow: 0 0 20px var(--glow-color);
+        }
+        .description-list li:nth-child(1) { animation-delay: 0.5s; }
+        .description-list li:nth-child(2) { animation-delay: 0.6s; }
+        .description-list li:nth-child(3) { animation-delay: 0.7s; }
+        .description-list li:nth-child(4) { animation-delay: 0.8s; }
+        .description-list li:nth-child(5) { animation-delay: 0.9s; }
+        .description-list li:nth-child(6) { animation-delay: 1.0s; }
+        .description-list li:nth-child(7) { animation-delay: 1.1s; }
+        .description-list li:nth-child(8) { animation-delay: 1.2s; }
+        .description-list li:nth-child(9) { animation-delay: 1.3s; }
+        .description-list li:nth-child(10) { animation-delay: 1.4s; }
+        .description-list li:nth-child(11) { animation-delay: 1.5s; }
+        .description-list li:nth-child(12) { animation-delay: 1.6s; }
+        .description-list li:nth-child(13) { animation-delay: 1.7s; }
+        .description-list li:nth-child(14) { animation-delay: 1.8s; }
+        .description-list li:nth-child(15) { animation-delay: 1.9s; }
+        .description-list li:nth-child(16) { animation-delay: 2.0s; }
+        .description-list li:nth-child(17) { animation-delay: 2.1s; }
+        .description-list li:nth-child(18) { animation-delay: 2.2s; }
+        .description-list li:nth-child(19) { animation-delay: 2.3s; }
+        .description-list li:nth-child(20) { animation-delay: 2.4s; }
+        .description-list li:nth-child(21) { animation-delay: 2.5s; }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 4rem;
+            }
+
+            .glass-container {
+                padding: 30px;
+                max-height: 85vh;
+            }
+
+            .description-list {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 20px 15px;
+            }
+
+            .moon {
+                width: 60px;
+                height: 60px;
+                box-shadow: 10px -10px 0 0 #f7f3e3;
+                top: 5%;
+                right: 8%;
+            }
+
+            .glass-container {
+                padding: 25px 20px;
+                max-height: 85vh;
+            }
+
+            .main-title {
+                font-size: 3rem;
+                margin-bottom: 15px;
+            }
+
+            .description-list {
+                font-size: 0.95rem;
+            }
+
+            .description-list li {
+                padding: 12px 18px;
+            }
+
+            .description-list li:hover {
+                transform: scale(1.03); 
+                box-shadow: 0 0 15px var(--glow-color);
+            }
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        @keyframes fadeInScaleUp {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--glow-color), 0 0 40px var(--glow-color); }
+            to { text-shadow: 0 0 20px #fff, 0 0 30px var(--secondary-color), 0 0 40px var(--secondary-color), 0 0 50px var(--secondary-color); }
+        }
+        @keyframes cascadeIn {
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeInMoon {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes shooting-star {
+            from { transform: rotate(135deg) translateX(0); opacity: 1; }
+            to { transform: rotate(135deg) translateX(800px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sky-container">
+        <div class="moon"></div>
+    </div>
+
+    <div class="glass-container">
+        <h1 class="main-title">Violete</h1>
+
+        <ul class="description-list">
+            <li>Cantik</li>
+            <li>Imut</li>
+            <li>Lucu</li>
+            <li>Centil</li>
+            <li>Tengil</li>
+            <li>Gemesin</li>
+            <li>Emosian dikit</li>
+            <li>Sabaran dikit</li>
+            <li>Aneh</li>
+            <li>Menarik</li>
+            <li>Manis</li>
+            <li>Orangnya kadang bikin emosi tapi lucu</li>
+            <li>Kalau udah ngambek susah banget di bujuk, keknya harus dikasi duit baru gak ngambek😓😓😓</li>
+            <li>Suka deh pokoknya</li>
+            <li>Sedikit unik</li>
+            <li>Kalau iseng lucu</li>
+            <li>Orangnya pintar tapi juga bego (begonya banget awokawk)😂😂</li>
+            <li>Punya daya tarik sih, bisa bikin orang jadi ikut senyum(agak maksa sih tapi jujur aja).</li>
+            <li>Gatau mau nambahin apa lagi hahahha, pokoknya gitu aja dulu</li>
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const skyContainer = document.querySelector('.sky-container');
+            const numberOfStars = 150;
+            const numberOfMeteors = 7;
+
+            for (let i = 0; i < numberOfStars; i++) {
+                let star = document.createElement('div');
+                star.className = 'star';
+                let size = Math.random() * 2;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.animationDelay = `${Math.random() * 5}s`;
+                star.style.animationDuration = `${2 + Math.random() * 3}s`;
+                skyContainer.appendChild(star);
+            }
+
+            for (let i = 0; i < numberOfMeteors; i++) {
+                let meteor = document.createElement('div');
+                meteor.className = 'meteor';
+                meteor.style.top = `${Math.random() * 50 - 50}%`;
+                meteor.style.left = `${Math.random() * 100}%`;
+                meteor.style.animationDelay = `${Math.random() * 10}s`; 
+                meteor.style.animationDuration = `${2 + Math.random() * 4}s`; 
+                skyContainer.appendChild(meteor);
+            }
+        });
+    </script>
+
+</body>
+</html>
