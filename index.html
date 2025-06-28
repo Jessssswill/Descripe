@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coba Klik Kalo Bisa!</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #1a1a2e;
+            font-family: 'Poppins', sans-serif;
+            color: #e0e0e0;
+            overflow: hidden; 
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            text-shadow: 0 0 10px #f988ff, 0 0 20px #f988ff;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #b3b3b3;
+            animation: fadeIn 2s ease-in-out 0.5s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+
+        #moveButton {
+            position: absolute; 
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            background: linear-gradient(45deg, #f988ff, #7a2cbf);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.2s ease-out; 
+            box-shadow: 0 0 20px rgba(249, 136, 255, 0.6);
+            z-index: 10;
+        }
+
+        #moveButton:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Penasaran ya?</h1>
+        <p>Coba deh klik tombol di bawah ini kalau bisa... 😜</p>
+    </div>
+
+    <button id="moveButton">Klik Aku!</button>
+
+    <script>
+        const moveButton = document.getElementById('moveButton');
+        let attempts = 0;
+        const maxAttempts = 7;
+
+        const runAway = () => {
+            if (attempts >= maxAttempts) {
+                moveButton.innerText = 'Oke, nyerah deh... Klik!';
+                moveButton.removeEventListener('mouseover', runAway);
+                return;
+            }
+
+            const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+            const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+            
+            let newTop = Math.random() * (vh - 100); 
+            let newLeft = Math.random() * (vw - 200);
+
+            moveButton.style.top = newTop + 'px';
+            moveButton.style.left = newLeft + 'px';
+
+            attempts++; 
+        };
+
+        moveButton.addEventListener('mouseover', runAway);
+
+        moveButton.addEventListener('click', () => {
+            if (attempts >= maxAttempts) {
+                window.location.href = 'vio.html'; 
+            }
+        });
+    </script>
+
+</body>
+</html>
